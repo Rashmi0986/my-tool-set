@@ -1,10 +1,5 @@
 import pathlib    
 path = pathlib.Path(r"TestFolder")
-for root, dirs, files in path.walk():
-    print("Root: ")
-    print(root)
-    print("Dirs: ")
-    print(dirs)
-    print("Files: ")
-    print(files)
-    print("")
+for p in path.rglob("*"):
+    print(p.name)
+    # p.is_dir(), p.is_file()
