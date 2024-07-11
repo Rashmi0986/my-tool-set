@@ -12,3 +12,10 @@ counter1 = countdown(2)
 counter1()
 del countdown # the ref to method is deleted 
 counter1() # yet the state is maintained 
+
+
+
+
+"""
+https://medium.com/python-features/introduction-to-closures-in-python-8d697ff9e44d
+"""
