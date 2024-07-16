@@ -1,0 +1,12 @@
+abc def rtrtg "00:00:0030T:200" GET /home/r/bs/t.gif  200 
+abc def rtrtg "00:00:0030T:200" GET /home/r/bs/a.gif  200 
+abc def rtrtg "00:00:0030T:200" GET /home/r/bs/d.gif  200 
+abc def rtrtg "00:00:0030T:200" GET /home/r/bs/p.gif  200 
+abc def rtrtg "00:00:0030T:200" GET /home/r/bs/c.gif  304 
+abc def rtrtg "00:00:0030T:200" GET /home/r/bs/p.gif  200 
+abc def rtrtg "00:00:0030T:200" GET /home/r/bs/       200 
+abc def rtrtg "00:00:0030T:200" PUT /home/r/ss/t.gif  200 
+abc def rtrtg "00:00:0030T:200" GET /home/r/bns/s.gif  400 
+abc def rtrtg "00:00:0030T:200" PUT /home/r/bcs/t.gif  200 
+abc def rtrtg "00:00:0030T:200" PUT /home/r/bvs/t.gif  200 
+abc def rtrtg "00:00:0030T:200" PUT /home/r/bbs/t.gif  200 
