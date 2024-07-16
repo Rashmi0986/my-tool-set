@@ -14,6 +14,10 @@ totalUsableHosts = subnet - 2
 firstnwId = baseaddress+".0"
 secondnwId = baseaddress+"."+str(subnet)
 
+
+broadcastIp = baseaddress+"."+str(totalUsableHosts+1)
+print(f"broadcast IP :{broadcastIp}")
+
 firsthost = baseaddress+".1"
 lasthost = baseaddress+"."+str(totalUsableHosts)
 
@@ -22,4 +26,3 @@ lasthost = baseaddress+"."+str(totalUsableHosts)
 print(f"Total usable hosts per subnet {totalUsableHosts}")
 print(f"Network number of the first two subnets are {firstnwId} and {secondnwId}")
 print(f"First and lasthost  address in the first subnet are {firsthost} and {lasthost}")
-
