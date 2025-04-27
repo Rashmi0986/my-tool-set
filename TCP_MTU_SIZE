@@ -1,0 +1,15 @@
+In summary: While Ethernet's MTU is 1500 bytes, the TCP MSS is typically 1460 bytes because of the header overhead from IP and TCP protocols. 
+
+The default Maximum Transmission Unit (MTU) for Ethernet is 1500 bytes, which includes the Ethernet frame header and trailer. This means the maximum amount of data that can be transmitted within an Ethernet frame is 1500 bytes. The Maximum Segment Size (MSS) for TCP is typically 1460 bytes, which is the MTU (1500) minus the IP and TCP header sizes. 
+Elaboration:
+MTU:
+The MTU is the largest size of a data unit that can be transmitted through a specific network technology. For Ethernet, the standard MTU is 1500 bytes. 
+MSS:
+The MSS is the maximum size of a TCP segment that can be transmitted in an IP packet. It is often set to the MTU minus the IP and TCP header sizes. 
+Ethernet and TCP/IP:
+When data is transmitted over the internet, it typically travels in packets. TCP uses these packets to ensure reliable data transmission. 
+Headers:
+Each layer of the TCP/IP stack adds its own header to the data. For example, IP adds an IP header, and TCP adds a TCP header. 
+Why 1460 bytes for MSS?
+When calculating MSS, the MTU (1500 bytes) needs to account for the IP header (20 bytes) and TCP header (20 bytes). This leaves 1460 bytes for the data payload within the segment. 
+In summary: While Ethernet's MTU is 1500 bytes, the TCP MSS is typically 1460 bytes because of the header overhead from IP and TCP protocols. 
