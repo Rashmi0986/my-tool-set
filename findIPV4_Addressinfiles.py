@@ -30,6 +30,44 @@ Valid Ipv4 address found in file Path :IPV4_ADDR/Dir_1/file_2.txt ['20.30.40.30'
 
 
 """
+# udpated version of thsi code 
+import os
+import re
+
+# Precompiled regex — faster for repeated use
+IPV4_REGEX = re.compile(
+    r'''\b(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\b'''
+)
+
+BASE_DIR = 'IPV4_ADDR'
+
+def find_ipv4_addresses_in_file(file_path):
+    result = []
+    try:
+        with open(file_path, 'r') as f:
+            for line in f:
+                result.extend(IPV4_REGEX.findall(line))
+    except Exception as e:
+        print(f"Error reading {file_path}: {e}")
+    return result
+
+def scan_directory_for_ipv4(base_dir):
+    for dirpath, _, filenames in os.walk(base_dir):
+        for filename in filenames:
+            filepath = os.path.join(dirpath, filename)
+            try:
+                if os.path.getsize(filepath) == 0:
+                    continue
+            except OSError as e:
+                print(f"Error getting size of {filepath}: {e}")
+                continue
+
+            ips_found = find_ipv4_addresses_in_file(filepath)
+            if ips_found:
+                print(f"✅ Valid IPv4 address(es) found in: {filepath} → {ips_found}")
+
+if __name__ == "__main__":
+    scan_directory_for_ipv4(BASE_DIR)
 
 
 
