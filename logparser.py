@@ -35,6 +35,24 @@ Output :
  Exception found in file_4.txt located at path IPV4_ADDR/Dir_1/file_4.txt at line num 13
  Exception found in file_3.txt located at path IPV4_ADDR/Dir_1/file_3.txt at line num 10
  Exception found in file_3.txt located at path IPV4_ADDR/Dir_1/file_3.txt at line num 12
+ """"
+
+#Updated Code using pathlib
+from pathlib import Path
+import re
+
+regex = re.compile(r'Exception')
+
+root = Path("IPV4_ADDR")
+
+for path in root.rglob("*"):   # recursive walk
+    if path.is_file() and path.stat().st_size > 0:   # non-empty files only
+        
+        with path.open("r", encoding="utf-8", errors="ignore") as f:
+            for lineno, line in enumerate(f, start=1):
+                if regex.search(line):
+                    print(f'Exception found in {path.name} located at {path} at line {lineno}')
+                    
  Exception found in file_3.txt located at path IPV4_ADDR/Dir_1/file_3.txt at line num 11
  
- """"
+
